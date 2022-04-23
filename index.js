@@ -10,7 +10,7 @@ function extraLinks(texto) {
         arrayResultados.push({ [temp[1]]: temp[2] })
     }
 
-    return arrayResultados
+    return arrayResultados.length === 0 ? 'Não há links' : arrayResultados;
 }
 
 function trataErro(erro) {
@@ -18,11 +18,11 @@ function trataErro(erro) {
 }
 
 //async await
-async function pegaArquivo(caminhoDoArquivo) {
+export default async function pegaArquivo(caminhoDoArquivo) {
     const encoding = 'utf-8';
     try {
         const texto = await fs.promises.readFile(caminhoDoArquivo, encoding);
-        console.log(extraLinks(texto));
+        return extraLinks(texto);
     } catch(erro) {
         trataErro(erro);
     }
@@ -46,5 +46,3 @@ async function pegaArquivo(caminhoDoArquivo) {
 //         console.log(chalk.green(texto));
 //     })
 // }
-
-pegaArquivo('./arquivos/texto1.md');
