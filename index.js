@@ -1,4 +1,3 @@
-import chalk from 'chalk';
 import fs from 'fs';
 
 function extraLinks(texto) {
@@ -14,7 +13,7 @@ function extraLinks(texto) {
 }
 
 function trataErro(erro) {
-    throw new Error(chalk.red(erro.code, 'não há arquivo no caminho'));
+    throw new Error(erro.code, 'não há arquivo no caminho');
 }
 
 //async await

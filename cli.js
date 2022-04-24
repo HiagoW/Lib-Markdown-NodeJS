@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import pegaArquivo from './index.js';
 import validaURLs from './http-validacao.js';
 import chalk from 'chalk';
